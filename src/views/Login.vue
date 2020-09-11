@@ -15,7 +15,7 @@
 <script>
 import HeaderAuth from "../components/HeaderAuth";
 export default {
-  daya() {
+  data() {
     return {
       email: "",
       password: ""

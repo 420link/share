@@ -30,8 +30,8 @@ export default {
             console.log(response);
             alert("シェアしました");
             this.share = "";
-            this.router.go({
-              path:$router.currentRouter.path,
+            this.$router.go({
+              path:this.$router.currentRoute.path,
               force: true,
             });
           });
