@@ -52,7 +52,7 @@ export default {
         this.shares[index].like.forEach((element) => {
           if (element.user_id == this.$store.state.user.id) {
             axios
-              .delete("herokuのURL/api/like", {
+              .delete("https://salty-journey-78977.herokuapp.com/api/like", {
                 data: {
                   share_id: this.shares[index].item.id,
                   user_id: this.$store.state.user.id,
@@ -69,7 +69,7 @@ export default {
         });
       } else {
         axios
-          .post("herokuのURL/api/like", {
+          .post("https://salty-journey-78977.herokuapp.com/api/like", {
             share_id: this.shares[index].item.id,
             user_id: this.$store.state.user.id,
           })
@@ -99,12 +99,12 @@ export default {
     async getShares() {
       let data = [];
       let shares = await axios.get(
-        "herokuのURL/api/shares"
+        "https://salty-journey-78977.herokuapp.com/api/shares"
       );
       for (let i = 0; i < shares.data.data.length; i++) {
         await axios
           .get(
-            "herokuのURL/api/shares/" +
+            "https://salty-journey-78977.herokuapp.com/api/shares/" +
               shares.data.data[i].id
           )
           .then((response) => {
